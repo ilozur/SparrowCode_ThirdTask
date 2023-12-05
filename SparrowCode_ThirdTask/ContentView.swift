@@ -15,9 +15,19 @@ struct ContentView: View {
         } label: {
             HStack(spacing: -10) {
                 Image(systemName: "play.fill")
+                    .offset(x: isTapped ? 38 : 0)
+                    .scaleEffect(isTapped ? 1 : 0)
+                    .opacity(isTapped ? 1 : 0)
+                    .animation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0))
                 Image(systemName: "play.fill")
+                    .offset(x: isTapped ? 38 : 0)
+                Image(systemName: "play.fill")
+                    .offset(x: isTapped ? 10 : 0)
+                    .scaleEffect(isTapped ? 0 : 1)
+                    .opacity(isTapped ? 0 : 1)
+                    .animation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0))
             }
-            .foregroundStyle(isTapped ? .blue : .red)
+            .foregroundStyle(.blue)
             .font(.system(size: 54))
         }
     }
