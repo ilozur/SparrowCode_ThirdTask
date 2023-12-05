@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isTapped: Bool = false
     var body: some View {
-        HStack(spacing: -10) {
-            Image(systemName: "play.fill")
-            Image(systemName: "play.fill")
+        Button {
+            isTapped.toggle()
+        } label: {
+            HStack(spacing: -10) {
+                Image(systemName: "play.fill")
+                Image(systemName: "play.fill")
+            }
+            .foregroundStyle(isTapped ? .blue : .red)
+            .font(.system(size: 54))
         }
-        .foregroundStyle(.blue)
-        .font(.system(size: 54))
     }
 }
 
