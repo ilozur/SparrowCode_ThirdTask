@@ -9,15 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HStack {
-            Image(systemName: "arrowtriangle.right.fill")
-                .imageScale(.large)
-            Image(systemName: "arrowtriangle.right.fill")
-                .imageScale(.large)
-                .offset(x: -20)
+        HStack(spacing: -10) {
+            Image(systemName: "play.fill")
+            Image(systemName: "play.fill")
         }
         .foregroundStyle(.blue)
-        .font(.largeTitle)
+        .font(.system(size: 54))
     }
 }
 
